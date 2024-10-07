@@ -1,8 +1,9 @@
 import {Metadata} from 'next';
 import Image from 'next/image';
 import * as Tabs from '@radix-ui/react-tabs';
-import {AnalyzeDepthButton} from '@/components/AnalyzeDepthButton';
-import {triggerDepthPro} from '@/api/api-actions';
+import {} from '@radix-ui/themes';
+import {Button} from '@/components/Button';
+import SelectImageForm from '@/components/SelectImageForm';
 
 export const metadata: Metadata = {
   title: 'Customers',
@@ -18,8 +19,6 @@ interface PageProps {
 }
 
 export default function Page({}: PageProps) {
-  const imgage = console.log(fetch('/x-ray1.jpg'));
-
   return (
     <main>
       <Tabs.Root
@@ -44,20 +43,14 @@ export default function Page({}: PageProps) {
           <p className='mb-5 text-sm leading-normal'>Make changes to your account here. Click save when you're done.</p>
           <Image width={150} height={150} src={'/x-ray1.jpg'} alt={'x-ray placeholder'} className='mx-auto' />
           <div className='mt-5 flex justify-end'>
-            <AnalyzeDepthButton>Analyze depth</AnalyzeDepthButton>
+            <Button>Analyze depth</Button>
           </div>
         </Tabs.Content>
         <Tabs.Content
           className='grow rounded-b-md bg-white p-5 outline-none focus:shadow-[0_0_0_2px] focus:shadow-black'
           value='tab2'
         >
-          <p className='mb-5 text-sm leading-normal text-mauve11'>
-            Change your password here. After saving, you'll be logged out.
-          </p>
-
-          <div className='mt-5 flex justify-end'>
-            <AnalyzeDepthButton>Analyze depth</AnalyzeDepthButton>
-          </div>
+          <SelectImageForm />
         </Tabs.Content>
       </Tabs.Root>
     </main>

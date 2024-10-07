@@ -1,4 +1,4 @@
-export async function triggerDepthPro(imageFile: Blob) {
+export async function triggerDepthPro(imageFile: File) {
   const formData = new FormData();
   formData.append('file', imageFile);
 
@@ -13,8 +13,7 @@ export async function triggerDepthPro(imageFile: Blob) {
     }
 
     const data = await response.json();
-    console.log('Depth Data:', data.depth);
-    console.log('Focal Length:', data.focal_length);
+    console.log('Data received:', data);
   } catch (error) {
     console.error('Error:', error);
   }

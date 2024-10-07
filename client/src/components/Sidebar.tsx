@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import RotatingSphere from './RotatingSphere';
 
 const Sidebar = () => {
@@ -12,9 +13,9 @@ const Sidebar = () => {
       <nav className='mt-10 flex-grow'>
         <ul>
           <li className='px-6 py-2 hover:bg-gray-700'>
-            <a href='/depth' className='text-lg'>
+            <Link href='/depth' className='text-lg'>
               Depth Pro (by Apple)
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
